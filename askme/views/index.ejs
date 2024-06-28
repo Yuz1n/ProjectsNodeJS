@@ -1,0 +1,38 @@
+<%- include ("partials/header.ejs") %>
+<body>
+    <%- include ("partials/navbar.ejs") %>
+    <div class="container">
+        <div style="text-align: center;">
+            <a href="/ask" class="navbar-brand">
+                <img src="/img/askhere.png" alt="Ask Here">
+            </a>
+        </div>
+        <br>
+        <div class="search-bar" style="text-align: center;">
+            <form action="/search" method="GET" class="search-form">
+                <input type="text" name="query" class="search-input" placeholder="Search for questions...">
+                <button type="submit" class="search-button">
+                    <i class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
+        <br>
+        <% asks.forEach(ask => { %>
+            <br>
+            <div class="card mb-4 custom-card shadow-lg">
+                <div class="card-header text-white d-flex justify-content-between align-items-center" style="background-color: #800020;">
+                    <h4 class="card-title mb-0"><%= ask.title %></h4>
+                    <span class="badge bg-category"><%= ask.category %></span>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><%= ask.description %></p>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <small class="text-muted">Posted on <%= new Date(ask.createdAt).toLocaleDateString() %></small>
+                    <a href="/ask/<%= ask.id %>"><button class="btn btn-info btn-sm">Answer</button></a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+<%- include ("partials/footer.ejs") %>

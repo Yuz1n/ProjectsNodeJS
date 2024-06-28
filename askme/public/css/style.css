@@ -1,0 +1,189 @@
+/* Estilizando o corpo */
+body {
+    background: url('/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Para evitar a rolagem horizontal */
+}
+
+#formask {
+    margin-top: 5vh;
+}
+
+/*SEARCH FORM*/
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*SEARCH BAR*/
+.search-input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #FFD700; /* Dourado claro */
+}
+
+.search-button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFD700; /* Dourado claro */
+}
+
+/*CARD*/
+.custom-card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilizando o cabeçalho do card */
+.custom-card .card-header {
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    background-color: #800020; /* Bordeaux */
+    color: white;
+}
+
+/* Estilizando o corpo do card */
+.custom-card .card-body {
+    padding: 20px;
+    background-color: transparent;
+}
+
+/* Estilizando o rodapé do card */
+.custom-card .card-footer {
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius: 0 0 10px 10px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Estilizando o botão de resposta */
+.btn-info {
+    background-color: #FFD700; /* Dourado claro */
+    border-color: #FFD700;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: black;
+}
+
+.btn-info:hover {
+    background-color: #800020; /* Bordeaux */
+    border-color: #800020;
+    color: white;
+}
+
+/* Estilizando os botões de voto */
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Estilizando as tags de categoria */
+.badge.bg-category {
+    background-color: #ffe600; /* Dourado claro */
+    font-size: 0.75rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #000; /* Texto preto */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 1200px) {
+    .search-form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 992px) {
+    .search-form {
+        width: 80%;
+    }
+
+    .custom-card .card-header, 
+    .custom-card .card-body, 
+    .custom-card .card-footer {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        width: 90%;
+    }
+
+    .custom-card .card-header, 
+    .custom-card .card-body, 
+    .custom-card .card-footer {
+        padding: 10px;
+    }
+
+    .search-button {
+        font-size: 18px;
+        right: 5px;
+    }
+
+    .search-input {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .search-input {
+        margin-bottom: 10px;
+    }
+
+    .search-button {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .custom-card .card-header, 
+    .custom-card .card-body, 
+    .custom-card .card-footer {
+        padding: 8px;
+    }
+}
